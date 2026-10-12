@@ -6,6 +6,10 @@ This directory collects research that is useful to contributors before it become
 > Start with the [current research preview](CURRENT_RESEARCH_PREVIEW_2026-10-05.md). It summarizes the newest
 > media/timing, HMI/menu and steering-wheel findings and clearly labels what is vehicle-proven vs static/design-only.
 
+## IOC / V850 and vehicle CAN (exact MU1440; static research)
+
+- **[MU1440 IOC/V850 and CAN access boundaries — architectural model, confirmed read/write DSI APIs and open raw CAN limits (2026-10-12)](MU1440_IOC_CAN_ACCESS_BOUNDARIES_2026-10-12.md)** — distinguishes exact firmware startup-script evidence, native GAL/DSI telemetry consumers, serializable OEM settings writes, a separate RCC IOC-update channel and historically documented V850/SPI architecture. No vehicle-validated raw CAN RX/TX claim; no firmware payloads or active vehicle commands.
+
 ## CPU / Tegra clock and QNX timebase (exact MU1440; read-only)
 
 - [R4: exact MU1440 libnvsku static audit](MU1440_TEGRA_SKU_STATIC_AUDIT_R4_2026-10-11.md) — confirms board-SKU wrapper only; speedo/fuse qualification remains open.
