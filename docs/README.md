@@ -1,5 +1,7 @@
 # Documentation index
 
+[Full current-tree documentation audit (22 October 2026)](maintainer/DOCUMENTATION_AUDIT_2026-10-22.md). The historic Final Drive evidence is linked from the current integration status; the experimental source and original operator ZIP were not automatically released.
+
 **Detailed new guides:** [Native HMI / control plane](architecture/NATIVE_HMI_AND_CONTROL_PLANE_2026-10-21.md) · [Stream-111 fault isolation](testing/STREAM111_FAULT_ISOLATION_2026-10-21.md) · [optional vehicle-data scope](architecture/OPTIONAL_VEHICLE_DATA_FEATURE_OVERVIEW.md).
 
 **October 2026 starting points:** [current integration status](status/INTEGRATION_STATUS_2026-10-21.md) · [module responsibilities and SEAT/VW HMI portability](architecture/MODULE_BOUNDARIES_AND_PORTABILITY.md) · [sanitized vehicle/timing evidence](findings/OCTOBER_2026_VEHICLE_AND_TIMING_EVIDENCE.md) · [public issue/publication policy](maintainer/ISSUE_AND_PUBLICATION_POLICY.md). The older 2026-10-05 research preview is a historical, mixed-evidence snapshot, not an installable current build.
@@ -8,10 +10,10 @@
 
 1. [System overview](architecture/SYSTEM_OVERVIEW.md)
 2. [Direct VC video path](architecture/DIRECT_VC_VIDEO_PATH.md)
-3. [Current research preview](research/CURRENT_RESEARCH_PREVIEW_2026-10-05.md) — newest media/keyframe, HMI/menu and steering-wheel findings, explicitly labeled by evidence level
+3. [Current October integration status](status/INTEGRATION_STATUS_2026-10-21.md) — latest cross-module evidence and separately qualified build/vehicle milestones
 4. [Research topic index](research/README.md)
 5. [ScreenAlt control plane](architecture/SCREENALT_CONTROL_PLANE.md)
-6. [Current development status](status/CURRENT_DEVELOPMENT_STATUS.md)
+6. [Historical implementation snapshot (2026-10-02)](status/CURRENT_DEVELOPMENT_STATUS.md)
 7. [Known issues](findings/KNOWN_ISSUES.md)
 8. [Roadmap](../ROADMAP.md)
 
