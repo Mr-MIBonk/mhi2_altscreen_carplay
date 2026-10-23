@@ -15,6 +15,7 @@ The pages here describe the **current public product/source, exact reference-tar
 ## SEAT/CUPRA contributor port
 
 - [MU1409 / P4708_1 joint AltScreen and native Settings port — public collaboration guide](porting/SEAT_CUPRA_MU1409_COLLABORATION.md). This is a staged development proposal, not a supported installer or a vehicle compatibility claim for our binary.
+- [Local Mac/QNX build and firmware-analysis environment for the SEAT MU1409 contributor](porting/SEAT_CUPRA_MU1409_LOCAL_ENVIRONMENT.md) — host-only prerequisites, reproducibility gates and steps before any vehicle tests.
 
 ## System interfaces
 
