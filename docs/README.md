@@ -17,6 +17,8 @@ The pages here describe the **current public product/source, exact reference-tar
 - [MU1409 / P4708_1 joint AltScreen and native Settings port — public collaboration guide](porting/SEAT_CUPRA_MU1409_COLLABORATION.md). This is a staged development proposal, not a supported installer or a vehicle compatibility claim for our binary.
 - [Local Mac/QNX build and firmware-analysis environment for the SEAT MU1409 contributor](porting/SEAT_CUPRA_MU1409_LOCAL_ENVIRONMENT.md) — host-only prerequisites, reproducibility gates and steps before any vehicle tests.
 
+- [Installer/test-package requirement: persistent Type-111 `carplay0` PF profile handling](installation/TYPE111_FIREWALL_INSTALLER_CONTRACT.md) — read-only check, profile-aware staged patch, postboot effective-rule verification and owned rollback (automatic target patching not yet implemented).
+
 ## System interfaces
 
 - **[Architecture module index and ownership guide](architecture/README.md)** — current authoritative page per subsystem, supporting historical references and release/source boundaries
