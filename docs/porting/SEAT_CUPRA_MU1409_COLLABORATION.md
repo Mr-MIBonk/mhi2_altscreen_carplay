@@ -58,6 +58,8 @@ Some recent Škoda HMI development builds already have visual/menu and storage e
 
 ## First practical setup on the contributor's Mac
 
+**Detailed step-by-step setup:** [SEAT/CUPRA MU1409 — local Mac, QNX build and firmware-analysis environment](SEAT_CUPRA_MU1409_LOCAL_ENVIRONMENT.md). This standalone guide is the authoritative entry point for prerequisites, installation checks, directory separation, extraction/conversion, reproducible toolchain and E0–E6 gates. The table below is only an overview.
+
 We can provide a pinned source handoff, reference comparisons, build guidance and focused review; the contributor can run the host tools and explicitly approved parked vehicle tests locally. **Start off-car.** Nothing below authorizes installation, flashing or modification of an ECU.
 
 | Stage | Local work | Evidence to retain |
