@@ -39,6 +39,8 @@ We expect substantial source-level reuse, but cannot promise unchanged Škoda bi
 
 **WP1 acceptance:** a reproducibly built and tested target-specific version of *our* runtime; meaningful diagnostics; wired map output; session stop/recovery; exclusive writer; and an independently checked stock restoration. This is not achieved merely by running the already working third-party package.
 
+**WP1 networking prerequisite:** the target's Type-111 `carplay0` PF ingress is a separate **mandatory installer/test-package gate**, not an optional debugging tweak. See the [persistent firewall/profile contract](../installation/TYPE111_FIREWALL_INSTALLER_CONTRACT.md). Collect actual effective rules, installed profile variants and startup/network reload behaviour read-only first; `pf.conf` containing a permit is not sufficient. The eventual reviewed installer must handle backup, all relevant profiles, postboot verification and owned rollback. The initial contributor bundle is not authorised to automatically patch live PF or reload rules during an SSH/CarPlay session.
+
 ### WP2 — Port the OEM-native HOME / Settings experience to SEAT
 
 This is the principal new collaboration goal. Our reference development has an OEM-style **HOME → Virtual Cockpit / CarPlay** menu design with presentation/navigation preferences, selectable options, diagnostics and a **single canonical native settings/control interface**. The menu should be usable even when CarPlay is active; it should not create a second AirPlay/iAP2 login, settings store, media writer or arbitrary shell-command channel.
