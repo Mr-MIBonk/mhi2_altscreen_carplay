@@ -19,6 +19,8 @@ The pages here describe the **current public product/source, exact reference-tar
 
 - [Installer/test-package requirement: persistent Type-111 `carplay0` PF profile handling](installation/TYPE111_FIREWALL_INSTALLER_CONTRACT.md) — read-only check, profile-aware staged patch, postboot effective-rule verification and owned rollback (automatic target patching not yet implemented).
 
+- [SEAT/CUPRA MU1409 key-input capture and AI-agent handoff](porting/SEAT_CUPRA_KEY_INPUT_CAPTURE_HANDOFF.md) — reproduce our two-stage Škoda passive key/encoder analysis on a different firmware; no unverified SEAT key IDs or live remapping.
+
 ## System interfaces
 
 - **[Architecture module index and ownership guide](architecture/README.md)** — current authoritative page per subsystem, supporting historical references and release/source boundaries
