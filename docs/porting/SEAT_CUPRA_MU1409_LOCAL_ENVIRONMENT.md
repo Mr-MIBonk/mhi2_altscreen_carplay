@@ -148,6 +148,12 @@ Prioritise:
 
 Compare MU1409 with the project's existing MU1447 and MU1440 **recorded baselines**. The reported historical 26,202 identical common classes are a useful hypothesis; remeasure against this exact P4708_1 source. Never publish extracted OEM classes or original decompiled implementation bodies.
 
+## Type-111 PF profile/preflight — required before WP1 vehicle testing
+
+Read the [dedicated installer and contributor-test firewall contract](../installation/TYPE111_FIREWALL_INSTALLER_CONTRACT.md). As part of the first bounded read-only unit inventory, capture a redacted snapshot of the **effective** PF rules, the relevant original persistent profile variants and the actual startup/network-specific loader references, where the owner permits. Compare the default `carplay0` TCP 6031 source-port requirement with the **actual** configured/SETUP-advertised port and check that rule ordering does not defeat it. An active socket, an edited `/etc/pf.conf` or a manual success before LTE/WLAN/PPP comes up is not sufficient. The contributor bundle provides host/offline checks only; any later on-unit all-profile patch, verified restore or reload requires a separately reviewed exact-target implementation and explicit owner approval.
+
+This requirement is part of **E4** (read-only preflight) and **E5** (postboot/video acceptance), not a reason to patch an active working unit as a shortcut.
+
 ## 7. Native ELF inspection and Ghidra
 
 On the private original components, collect hashes, file sizes, ELF machine/ABI information, `DT_NEEDED`, relevant imports/exports and executable-code comparisons. Use appropriate host `file`/`readelf` or the pinned cross-toolchain equivalents (a Mac host may not ship GNU `readelf` by default).
