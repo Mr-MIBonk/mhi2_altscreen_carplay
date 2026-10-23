@@ -12,6 +12,10 @@ The pages here describe the **current public product/source, exact reference-tar
 6. [Reference developer release](../release/CURRENT.md), [installation](INSTALLATION.md) and [compatibility matrix](testing/COMPATIBILITY_MATRIX.md)
 7. [Current roadmap](../ROADMAP.md) and [known issues](findings/KNOWN_ISSUES.md)
 
+## SEAT/CUPRA contributor port
+
+- [MU1409 / P4708_1 joint AltScreen and native Settings port — public collaboration guide](porting/SEAT_CUPRA_MU1409_COLLABORATION.md). This is a staged development proposal, not a supported installer or a vehicle compatibility claim for our binary.
+
 ## System interfaces
 
 - **[Architecture module index and ownership guide](architecture/README.md)** — current authoritative page per subsystem, supporting historical references and release/source boundaries
