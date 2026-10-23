@@ -228,6 +228,8 @@ The checker is necessary, not sufficient and does not certify the SEAT runtime. 
 
 The **first useful handoff** is only E0–E2: a concise redacted environment/firmware compatibility summary, reproducible tool versions and a list of exact questions we can address together. The contributor does not need to reverse-engineer every firmware subsystem or dismantle a working car installation before we can review it.
 
+**Separate input-research task:** [SEAT/CUPRA steering-wheel and key-input discovery handoff](SEAT_CUPRA_KEY_INPUT_CAPTURE_HANDOFF.md) includes a paste-ready AI/Codex task, verified Škoda measured tuples, public logger/decoder/build sources, adaptive SEAT stop/go gates and redacted report format. Do not assume the Škoda DebugSPI socket or wheel IDs exist unchanged on P4708_1.
+
 ## Reference pages
 
 - [Joint SEAT/CUPRA port plan](SEAT_CUPRA_MU1409_COLLABORATION.md)
