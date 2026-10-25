@@ -2,18 +2,32 @@
 
 **Updated 22 October 2026.** These are *observed on the fitted reference vehicle* unless marked otherwise. The manufacturer’s symbolic LEFT/RIGHT names do **not** reliably describe the physical wheel side on this car. Presses (`updateKey2`) and detents (`updateEncoder2`) are separate event families. This page is the current public mapping, superseding the older warnings-only conclusions; the dated raw-record analysis remains [available here](../research/keypanel/MU1440_F902_FIVE_INT_ENCODER_CAPTURE_2026-10-11.md).
 
+## Illustrated physical reference — Škoda Octavia III (2016)
+
+![Numbered 2016 Škoda Octavia III steering-wheel controls](assets/MU1440_OCTAVIA_III_2016_STEERING_WHEEL_CONTROL_MAP.svg)
+
+[Open the full-size steering-wheel control diagram](assets/MU1440_OCTAVIA_III_2016_STEERING_WHEEL_CONTROL_MAP.svg).
+
+The illustrated reference follows **the owner's photographed 2016 Octavia III wheel**, not a later Octavia IV or a generic Škoda/VW layout. The drawing is a **stylized visual aid**, not an OEM component drawing. The numbers below identify physical controls and gestures; **they are not DSI key IDs**. In particular, **2/8 are roller *pushes*** and **3.1/3.2 and 9.1/9.2 are roller *rotations***, which arrive on a different DSI callback. The labels **+ / −** are wheel direction markings, not separately verified pushbuttons. Symbolic OEM LEFT/RIGHT naming does not override the measured physical positions.
+
 ## Physically correlated controls
 
-| Physical input | Observed signal | Evidence / caution |
-| --- | --- | --- |
-| Right scroll wheel **press** | `updateKey2`: `KBD=4 KEY=40`; short `KST 1→0`, long `1→3→4→5→0` | Correlated OEM `HK Received`; symbolic OEM constant calls 40 “ROLLER_LEFT,” **not** its physical mounting side |
-| Right scroll wheel **up / down** | `updateEncoder2(4,40,+1,0,1)` / `(4,40,-1,0,1)` | Six directly decoded five-int records, three per annotated direction; sign here is physical-test order, **not** proven AirPlay zoom direction |
-| Right Back/menu-return control | `updateKey2`: `4/41`; short `1→0`; long `1→3→4→5→0` | Operator-note/stock-log correlated; don't confuse with separate physical VIEW |
-| Right telephone control | `updateKey2`: `4/53`; `1→0` | Correlated |
-| Left scroll wheel **press** | `updateKey2`: `4/44`; `1→0` | Correlated; symbolic OEM constant calls 44 “ROLLER_RIGHT” |
-| Left scroll wheel **up / down** | `updateEncoder2(4,44,+1,0,1)` / `(4,44,-1,0,1)` | Six directly decoded five-int records, three per annotated direction; no corresponding `HK Received` expected from encoder path |
-| Left upper / lower controls | `updateKey2`: `4/46` / `4/47`; `1→0` | Correlated to manual action sequence, not a claim for every wheel style |
-| Voice/PTT | `updateKey2`: `4/50`; `1→0` | Correlated |
+| Ref. | Symbol | Physical input (2016 wheel) | Observed DSI signal | Evidence / caution |
+| :---: | :---: | --- | --- | --- |
+| **1** | 🗣 | Left voice/PTT button | `updateKey2`: `KBD=4, KEY=50`; `KST 1→0` | Vehicle-correlated; exact label is PTT/voice, not necessarily a particular phone voice assistant |
+| **2** | ● | **Left roller push (center click)** | `updateKey2`: `4/44`; `1→0` | Measured **push**, separate from rotation; OEM symbol calls KEY44 `ROLLER_RIGHT` |
+| **3.1** | ＋ ↑ | **Left roller rotate upward** (volume + marking) | `updateEncoder2(4,44,+1,0,1)` | Measured five-int encoder tuple; **not** a dedicated pushbutton |
+| **3.2** | − ↓ | **Left roller rotate downward** (volume − marking) | `updateEncoder2(4,44,-1,0,1)` | Measured five-int encoder tuple; OEM volume function is contextual and not itself the raw ID |
+| **4** | △ | Left upper arrow button | `updateKey2`: `4/46`; `1→0` | Vehicle-correlated to manual action sequence; symbolic `ARROW_A_UP` |
+| **5** | ▽ | Left lower arrow button | `updateKey2`: `4/47`; `1→0` | Vehicle-correlated to manual action sequence; symbolic `ARROW_A_DOWN` |
+| **6** | 🚘 | Right driver-assistance button | **Not yet physically mapped** | OEM assistance menu observed; no defensible `KBD/KEY` tuple from this capture. No `HK` text is not proof of no input |
+| **7** | ☎ | Right telephone button | `updateKey2`: `4/53`; `1→0` | Vehicle-correlated; symbolic OEM constant `HOOK`, actual action depends on phone state |
+| **8** | ● | **Right roller push (center click)** | `updateKey2`: `KBD=4, KEY=40`; short `1→0`; long `1→3→4→5→0` | Vehicle-correlated; symbolic OEM name `ROLLER_LEFT` is **not** physical left side |
+| **9.1** | ↑ | **Right roller rotate upward** (scroll up) | `updateEncoder2(4,40,+1,0,1)` | Three directly decoded five-int records in annotated up direction; not proven AirPlay semantic zoom |
+| **9.2** | ↓ | **Right roller rotate downward** (scroll down) | `updateEncoder2(4,40,-1,0,1)` | Three directly decoded five-int records in annotated down direction; separate from KEY40 push |
+| **10** | ↩ | Right Back/menu-return button | `updateKey2`: `4/41`; short `1→0`; long `1→3→4→5→0` | Vehicle-correlated; **not** the separately unresolved physical VIEW button |
+
+**Diagram/measurement scope:** The numbers and icons refer only to the fitted photographed 2016 wheel. The up/down signs around the rollers mark rotary motion; they do not prove dedicated button events. Native volume/phone/menu behavior may depend on HU/VC state. No measured `KBD/KEY` has been assigned to Assist or VIEW; do not import assumptions from later-model steering wheels.
 
 **Important:** `KBD4/KEY38` and `KEY39` are OEM symbolic UP/DOWN *key* IDs and a public third-party 790 adapter uses them for semantic actions; neither was emitted as an `HK Received` event during our measured right-wheel detents. Do not invent KEY38/39 messages or globally swallow stock rotary callbacks. `KEY40` as a press and encoder ID 40 as a rotation are different DSI message types.
 
