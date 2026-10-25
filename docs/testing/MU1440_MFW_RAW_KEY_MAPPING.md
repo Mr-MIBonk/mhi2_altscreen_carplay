@@ -1,14 +1,14 @@
 # Physical steering-wheel and head-unit input map — Škoda MU1440
 
-**Updated 22 October 2026.** These are *observed on the fitted reference vehicle* unless marked otherwise. The manufacturer’s symbolic LEFT/RIGHT names do **not** reliably describe the physical wheel side on this car. Presses (`updateKey2`) and detents (`updateEncoder2`) are separate event families. This page is the current public mapping, superseding the older warnings-only conclusions; the dated raw-record analysis remains [available here](../research/keypanel/MU1440_F902_FIVE_INT_ENCODER_CAPTURE_2026-10-11.md).
+**Mapping measurements updated 22 October 2026; reference illustrations updated 25 October 2026.** These are *observed on the fitted reference vehicle* unless marked otherwise. The manufacturer’s symbolic LEFT/RIGHT names do **not** reliably describe the physical wheel side on this car. Presses (`updateKey2`) and detents (`updateEncoder2`) are separate event families. This page is the current public mapping, superseding the older warnings-only conclusions; the dated raw-record analysis remains [available here](../research/keypanel/MU1440_F902_FIVE_INT_ENCODER_CAPTURE_2026-10-11.md).
 
 ## Illustrated physical reference — Škoda Octavia III (2016)
 
-![Numbered 2016 Škoda Octavia III steering-wheel controls](assets/MU1440_OCTAVIA_III_2016_STEERING_WHEEL_CONTROL_MAP.svg)
+![Numbered 2016 Škoda Octavia III steering-wheel controls](assets/MU1440_OCTAVIA_III_2016_STEERING_WHEEL_CONTROL_MAP.webp)
 
-[Open the full-size steering-wheel control diagram](assets/MU1440_OCTAVIA_III_2016_STEERING_WHEEL_CONTROL_MAP.svg).
+[Open the full-size steering-wheel control diagram](assets/MU1440_OCTAVIA_III_2016_STEERING_WHEEL_CONTROL_MAP.webp).
 
-The illustrated reference follows **the owner's photographed 2016 Octavia III wheel**, not a later Octavia IV or a generic Škoda/VW layout. The drawing is a **stylized visual aid**, not an OEM component drawing. The numbers below identify physical controls and gestures; **they are not DSI key IDs**. In particular, **2/8 are roller *pushes*** and **3.1/3.2 and 9.1/9.2 are roller *rotations***, which arrive on a different DSI callback. The labels **+ / −** are wheel direction markings, not separately verified pushbuttons. Symbolic OEM LEFT/RIGHT naming does not override the measured physical positions.
+The illustrated reference follows **the owner's photographed 2016 Octavia III wheel**, not a later Octavia IV or a generic Škoda/VW layout. The replacement is a **photo-realistic, manual-style illustration** derived from the owner's photographed controls, not an OEM component drawing or electrical measurement. The numbers below identify physical controls and gestures; **they are not DSI key IDs**. In particular, **2/8 are roller *pushes*** and **3.1/3.2 and 9.1/9.2 are roller *rotations***, which arrive on a different DSI callback. The labels **+ / −** are wheel direction markings, not separately verified pushbuttons. Symbolic OEM LEFT/RIGHT naming does not override the measured physical positions.
 
 ## Physically correlated controls
 
@@ -32,6 +32,24 @@ The illustrated reference follows **the owner's photographed 2016 Octavia III wh
 **Important:** `KBD4/KEY38` and `KEY39` are OEM symbolic UP/DOWN *key* IDs and a public third-party 790 adapter uses them for semantic actions; neither was emitted as an `HK Received` event during our measured right-wheel detents. Do not invent KEY38/39 messages or globally swallow stock rotary callbacks. `KEY40` as a press and encoder ID 40 as a rotation are different DSI message types.
 
 ## Main head unit / physical button area
+
+### Columbus MIB2.5 — numbered left display-edge controls (2016 reference car)
+
+![Numbered left-side controls of the Škoda Columbus MIB2.5 large-display head unit](assets/MU1440_COLUMBUS_MIB25_LEFT_DISPLAY_CONTROLS.webp)
+
+[Open the full-size Columbus left-control reference](assets/MU1440_COLUMBUS_MIB25_LEFT_DISPLAY_CONTROLS.webp).
+
+The **HU-1 to HU-5** numbering is specific to the **five visible left display-edge fields** of the owner's Columbus 2.5 large-display unit. It is deliberately separate from the steering-wheel numbering **1–10** above. The picture is a **manual-style visual reference**; labels and pictograms are *not* proof of a DSI key/encoder tuple, electrical connection, press/hold behavior, or identical function on another Columbus hardware variant.
+
+| Ref. | Symbol / panel label | Physical location / expected OEM action | Measured MU1440 raw signal | Confidence and limitations |
+| :---: | :---: | --- | --- | --- |
+| **HU-1** | `MENU` | Uppermost left display-edge field: main menu | `updateKey2`: `KBD=13, KEY=78`, `KST 1→0` | **Vehicle-observed**; event correlated to `MENU` |
+| **HU-2** | `HOME` | Second field: home screen | `updateKey2`: `KBD=13, KEY=116`, `KST 1→0`; ~5.5-s hold also logged `1→0` | **Vehicle-observed**; hold did **not** establish separate long-press stages |
+| **HU-3** | `＋` / audio | Third field: volume increase marking | **Not independently captured** for this panel | **Visual/function label only**; no physical `KBD/KEY` assignment established |
+| **HU-4** | `−` / audio | Fourth field: volume decrease marking | **Not independently captured** for this panel | **Visual/function label only**; do not substitute generic VW/QEMU key IDs |
+| **HU-5** | `⏻` | Bottom field: system power / mute marking | **Not independently captured** for this panel | **Visual/function label only**; short-press mute versus hold power behavior is not proven by this dataset |
+
+**Measurement boundary:** Only **HU-1/HU-2** can be tied to the existing measured head-unit key tuples. For **HU-3 to HU-5**, record separate press/hold actions and the normal OEM result on the actual vehicle before linking to an input API or assigning custom actions. All five labels describe this **specific bezel layout**, not a universal Škoda Columbus key map.
 
 | Physical input | Measured on this reference unit | Confidence |
 | --- | --- | --- |
